@@ -1,4 +1,4 @@
-var dustpin1,Ground
+var dustpin1,Ground,a
 var paper1,paperObject
 const Engine = Matter.Engine;
 const World = Matter.World;
@@ -22,6 +22,7 @@ function setup() {
 	dustpin2=new dustpin(560,615,20,90)
 	dustpin3=new dustpin(440,615,20,90)
 	dustpin4=new dustpin(75,700,20,20)
+	a=-2
 }
 
 
@@ -34,8 +35,9 @@ function draw() {
   dustpin3.display()
   Ground.display()
   if (keyCode === UP_ARROW){
-	Matter.Body.applyForce(paper1.body,paper1.body.position,{x:1,y:-1});
-}
+	Matter.Body.applyForce(paper1.body,paper1.body.position,{x:1,y:a});
+	a=a+0.13
+}	
   drawSprites();
  
 }
